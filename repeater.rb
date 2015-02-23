@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require 'httparty'
+
+require 'pry'
 
 # For now, this is just a simple repeater of the Github API
 # Making a GET request to `/users/:username` should show the
@@ -6,6 +9,7 @@ require 'sinatra/base'
 # Your calls to Github don't need to be authenticated, but it
 #   would be a nice bonus to add a mechanism to do so
 def prompt_for_token
+  return ENV["GITHUB_TOKEN"] if ENV["GITHUB_TOKEN"]
   print "Enter your github token: "
   gets.chomp
 end
@@ -19,7 +23,9 @@ end
 
 class GithubRepeater < Sinatra::Base
   get '/users/:username' do
-    find_repos params[:username]
+    @data_from_controller = "ASDFASDFASDF"
+    @repos = find_repos params[:username]
+    erb :repo_list
   end
 end
 
