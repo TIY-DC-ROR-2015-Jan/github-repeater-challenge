@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Github Data</title>
+	<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"> -->
+	<style type="text/css">
+	body {background-color:white; font-family:"Helvetica Neue", Helvetica, sans-serif; line-height:1.3em; font-size: 0.9em; width: 90%; margin:0em auto;}
+	ul {list-style-type: square;}
+	li {padding-bottom:0.3em;}
+	table {border-collapse:collapse;}
+	tbody > tr:nth-child(odd) {background-color:#F6D6CB;}
+	th {font-size:0.75em;}
+	th:first-child { text-align:left; padding-left:0.75em;}
+	td {width:3em; text-align:right; border:1px blue dotted;padding-right: 1em;}
+	td:first-child {width:10em; border:1px blue dotted; text-align:left;}
+	</style>
+</head>
+<body>
+<h2>Repos for <%= @repos.first['owner']['login'] %></h2>
+<p>Number of repos: <%= @repos.size %></p>
+<div><%= @repos %></div>
+<!-- 
+<ul>
+	<li>Illum Dolore</li>
+	<li>Eu Feugiat Nulla</li>
+	<li>Facilisis At Vero Eros</li>
+	<li>Accumsan Formas Humanitatis</li>
+	<li>Per Seacula Quarta Decima</li>
+	<li>Quinta Decima Eodem Modo</li>
+</ul>
+ -->
+ <table cellpadding="0" cellspacing="0" border="0">
+ <thead style="font-weight: bold">
+ <tr>
+ <th>Repo</th>
+ <th>Size</th>
+ <th>Watchers</th>
+ <th>Forks</th>
+ <th>Issue</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+	<td><a href="<% html_url %>">name</a></td>
+	<td>832</td>
+	<td>0</td>
+	<td>2</td>
+	<td>9</td>
+	<!--
+	<td>size</td>
+	<td>watchers_count</td>
+	<td>forks_count</td>
+	<td>open_issues_count</td>
+	-->
+ </tr>
+ <tr>
+	<td><a href="<% html_url %>">name</a></td>
+	<td>832</td>
+	<td>0</td>
+	<td>2</td>
+	<td>9</td>
+	</tr>
+ </tbody>
+ </table>
+</body>
+</html>
