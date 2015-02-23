@@ -8,7 +8,7 @@ require 'httparty'
 #   would be a nice bonus to add a mechanism to do so
 class GithubRepeater < Sinatra::Base
   get '/users/:username' do
-    redirect "https://github.com/#{username}/?tab=repositories"
+    HTTParty.get("https://api.github.com/#{username}/repos"
     # "https://github.com/#{username}"
     # params[tab:"repositories"]
   end
