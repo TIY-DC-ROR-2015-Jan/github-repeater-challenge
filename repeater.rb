@@ -17,8 +17,8 @@ end
 def find_repos username
   token = prompt_for_token
   repos = HTTParty.get("https://api.github.com/users/#{username}/repos", headers: {"Authorization" => "token #{token}", "User-Agent" => "anything"})
-  user_repos = repos.map {|x| x["name"]}
-  user_repos
+  # user_repos = repos.map {|x| x["name"]}
+  # user_repos
 end
 
 class GithubRepeater < Sinatra::Base
@@ -26,6 +26,8 @@ class GithubRepeater < Sinatra::Base
     @data_from_controller = "ASDFASDFASDF"
     @repos = find_repos params[:username]
     erb :repo_list
+    # content_type :json
+    # @repos.to_json
   end
 end
 

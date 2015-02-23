@@ -16,7 +16,9 @@
     <h3>Building a List from Ruby</h3>
     <ul>
       <% @repos.each do |repo| %>
-        <li><%= repo %></li>
+        <li>
+          <a href="<%= repo["html_url"] %>"><%= repo["name"] %></a>
+        </li>
       <% end %>
     </ul>
   </body>
