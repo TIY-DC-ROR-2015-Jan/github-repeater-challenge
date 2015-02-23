@@ -11,15 +11,16 @@
 	table {border-collapse:collapse;}
 	tbody > tr:nth-child(odd) {background-color:#F6D6CB;}
 	th {font-size:0.75em;}
-	th:first-child { text-align:left; padding-left:0.75em;}
-	td {width:3em; text-align:right; border:1px blue dotted;padding-right: 1em;}
-	td:first-child {width:10em; border:1px blue dotted; text-align:left;}
+	th:first-child { text-align:left; padding-left:1em;}
+	td {width:3em; text-align:right; padding-right: 1em;}
+	td:first-child {width:10em; text-align:left; padding-left:1em;}
+	a { text-decoration:none; }
 	</style>
 </head>
 <body>
 <h2>Repos for <%= @repos.first['owner']['login'] %></h2>
 <p>Number of repos: <%= @repos.size %></p>
-<div><%= @repos %></div>
+<!-- <div><%= @repos %></div> -->
 <!-- 
 <ul>
 	<li>Illum Dolore</li>
@@ -30,38 +31,29 @@
 	<li>Quinta Decima Eodem Modo</li>
 </ul>
  -->
- <table cellpadding="0" cellspacing="0" border="0">
- <thead style="font-weight: bold">
- <tr>
- <th>Repo</th>
- <th>Size</th>
- <th>Watchers</th>
- <th>Forks</th>
- <th>Issue</th>
- </tr>
- </thead>
- <tbody>
- <tr>
-	<td><a href="<% html_url %>">name</a></td>
-	<td>832</td>
-	<td>0</td>
-	<td>2</td>
-	<td>9</td>
-	<!--
-	<td>size</td>
-	<td>watchers_count</td>
-	<td>forks_count</td>
-	<td>open_issues_count</td>
-	-->
- </tr>
- <tr>
-	<td><a href="<% html_url %>">name</a></td>
-	<td>832</td>
-	<td>0</td>
-	<td>2</td>
-	<td>9</td>
-	</tr>
- </tbody>
+ <table cellpadding="2" cellspacing="0" border="0">
+	 <thead style="font-weight: bold">
+		 <tr>
+		 <th>Repo</th>
+		 <th>Size</th>
+		 <th>Watchers</th>
+		 <th>Forks</th>
+		 <th>Issue</th>
+		 </tr>
+	 </thead>
+	 <tbody>
+		 <% @repos.each do |repo| %>
+			<tr>
+				<td><a href="<%= repo['html_url'] %>" target="_blank"><%= repo['name'] %></td>
+				<td><%= repo['size'] %></td>
+				<td><%= repo['watchers_count'] %></td>
+				<td><%= repo['nameforks_count'] %></td>
+				<td><%= repo['open_issues_count'] %></td>
+			</tr>
+			<% end %>
+
+	 </tr>
+	 </tbody>
  </table>
 </body>
 </html>
