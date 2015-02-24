@@ -20,18 +20,7 @@
 <body>
 <h2>Repos for <%= @repos.first['owner']['login'] %></h2>
 <p>Number of repos: <%= @repos.size %></p>
-<!-- <div><%= @repos %></div> -->
-<!-- 
-<ul>
-	<li>Illum Dolore</li>
-	<li>Eu Feugiat Nulla</li>
-	<li>Facilisis At Vero Eros</li>
-	<li>Accumsan Formas Humanitatis</li>
-	<li>Per Seacula Quarta Decima</li>
-	<li>Quinta Decima Eodem Modo</li>
-</ul>
- -->
- <table cellpadding="2" cellspacing="0" border="0">
+<table cellpadding="2" cellspacing="0" border="0">
 	 <thead style="font-weight: bold">
 		 <tr>
 		 <th>Repo</th>
@@ -51,9 +40,10 @@
 				<td><%= repo['open_issues_count'] %></td>
 			</tr>
 			<% end %>
-
 	 </tr>
 	 </tbody>
  </table>
+ <div style="">HTTP code: <% @repos['code'] %></div>
+ <div><a href="/search">Search again?</a></div>
 </body>
 </html>

@@ -12,7 +12,7 @@ class GithubRepeater < Sinatra::Base
 		"User-Agent"    => "Mozilla"
 	}
 	
-	get '/users/:username' do
+	post '/users/:username' do
     # @repos = get_repos params[:username]
 		@repos = HTTParty.get("https://api.github.com/users/#{params[:username]}/repos")
     erb :repo_list2
@@ -21,6 +21,11 @@ class GithubRepeater < Sinatra::Base
     # @repos.to_json
 
 		# binding.pry
+	end
+	
+	get '/search' do
+		"confirm"
+		erb :repo_list
 	end
 end
 

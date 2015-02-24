@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Github Data</title>
+	<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"> -->
+	<style type="text/css">
+	body {background-color:white; font-family:"Helvetica Neue", Helvetica, sans-serif; line-height:1.3em; font-size: 0.9em; width: 90%; margin:0em auto;}
+	ul {list-style-type: square;}
+	li {padding-bottom:0.3em;}
+	table { border-collapse: collapse; border: 1px #D2D2D2 dotted; }
+	tbody > tr:nth-child(odd) {background-color:#F6D6CB;}
+	th {font-size:0.75em;}
+	th:first-child { text-align:left; padding-left:1em;}
+	td {width:3em; text-align:right; padding-right: 1em;}
+	td:first-child {width:10em; text-align:left; padding-left:1em;}
+	a { text-decoration:none; }
+	.panel { width: 300px; height: 100px; display: block; background-color: #D8E5E8; border: 1px #699ACD solid; }
+	form {padding:20px;}
+	</style>
+</head>
+<body>
+<h3>Search for Git user repos</h3>
+<div class="panel">
+	<form method="post" name="searchform" id="searchform" action="/users">
+	<label for="username">User: </label><input type="text" name="username" id="username" size="32"><br>
+	<div style="padding:10px 0px 0px 38px;">
+		<button name="clear" type="reset" value="1" id="clearButton">
+		Clear
+		</button>
+		<button name="search" type="submit" value="1" id="searchButton">
+		Search
+		</button>
+	</div>
+	</form>
+</div>
+</body>
+</html>
